@@ -24,13 +24,13 @@
   <script>
     function calculatePercentage() {
       // Get the input number and percentage
-      let input = document.getElementById("inputNumber").value;
+      var input = document.getElementById("inputNumber").value;
       input = parseInt(input);
-      let percentage = prompt("Enter the percentage:");
+      var percentage = prompt("Enter the percentage:");
       percentage = parseInt(percentage);
 
       // Calculate the result
-      let result = input * (percentage / 100);
+      var result = input * (percentage / 100);
 
       // Display the result
       document.getElementById("result").innerHTML = `${percentage}% of ${input} is ${result}`;
@@ -47,7 +47,7 @@
                
             <div class="row head" style="padding-bottom:10px; padding-top:10px; margin-bottom: 0px;" >
                 <div class="col-lg-6" style="float:left;">
-                  <div style="display:inline-block;">  {{ form_label(myform.max) }} </div>
+                  <div style="display:inline-block;"> ${percentage} </div>
                     {{ form_errors(myform.max) }}
                   <div style="display:inline-block;">  {{ form_widget(myform.max) }} </div>
                  </div>
