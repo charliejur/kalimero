@@ -14,6 +14,31 @@
   </form>
   
   <br>
+  
+  <h1>Percentage Calculator</h1>
+  <p>Enter a number:</p>
+  <input type="text" id="inputNumber">
+  <button onclick="calculatePercentage()">Calculate Percentage</button>
+  <p id="result"></p>
+  
+  <script>
+    function calculatePercentage() {
+      // Get the input number and percentage
+      let input = document.getElementById("inputNumber").value;
+      input = parseInt(input);
+      let percentage = prompt("Enter the percentage:");
+      percentage = parseInt(percentage);
+
+      // Calculate the result
+      let result = input * (percentage / 100);
+
+      // Display the result
+      document.getElementById("result").innerHTML = `${percentage}% of ${input} is ${result}`;
+    }
+  </script>
+  
+  
+  
   <div id="result"></div>
   <div class="container-viewport">
      <div id="wrapper">
