@@ -14,6 +14,85 @@
   
   <br>
   <div id="result"></div>
+  <div class="container-viewport">
+     <div id="wrapper">
+           {{ form_start(myform) }}
+             {{ form_errors(myform) }}
+             
+               <h2 style="text-align:center">Rychlé hodnocení</h2>
+               
+            <div class="row head" style="padding-bottom:10px; padding-top:10px; margin-bottom: 0px;" >
+                <div class="col-lg-6" style="float:left;">
+                  <div style="display:inline-block;">  {{ form_label(myform.max) }} </div>
+                    {{ form_errors(myform.max) }}
+                  <div style="display:inline-block;">  {{ form_widget(myform.max) }} </div>
+                 </div>
+                 <div class="col-lg-6" style="float:left;">
+                   <div style="display:inline-block;"> {{ form_label(myform.current) }}</div>
+                    {{ form_errors(myform.current) }}
+                   <div style="display:inline-block;"> {{ form_widget(myform.current) }}</div>
+                </div>
+            </div>
+
+    <div class="table" style="margin-bottom: 0px;">
+            <table class="table table-hover" style="margin-bottom: 0px;">
+                <thead>
+                    <tr>
+                        <th>Body</th>
+                        <th>Max</th>
+                        <th  class="procenta" style="padding-left:13px;">%</th>
+                        <th>Min</th>
+                        <th  class="procenta" style="padding-left:13px;">%</th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>{{ onemax }}</td>
+                        <td class="formtd procenta">{{ form_widget(myform.jednamax) }}</td>
+                        <td>{{ onemin }}</td>
+                        <td class="formtd procenta">{{ form_widget(myform.jednamin) }}</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>{{ twomax }}</td>
+                        <td class="formtd procenta">{{ form_widget(myform.dvamax) }}</td>
+                        <td>{{ twomin }}</td>
+                        <td class="formtd procenta">{{ form_widget(myform.dvamin) }}</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>                    
+                        <td>{{ threemax }}</td>
+                        <td class="formtd procenta">{{ form_widget(myform.trimax) }}</td>
+                        <td>{{ threemin }}</td>
+                        <td class="formtd procenta">{{ form_widget(myform.trimin) }}</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>{{ fourmax }}</td>
+                        <td class="formtd procenta">{{ form_widget(myform.ctyrimax) }}</td>
+                        <td>{{ fourmin }}</td>
+                        <td class="formtd procenta">{{ form_widget(myform.ctyrimin) }}</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>{{ fivemax }}</td>
+                        <td class="formtd procenta">{{ form_widget(myform.petmax) }}</td>
+                        <td>{{ fivemin }}</td>
+                        <td class="formtd procenta">{{ form_widget(myform.petmin) }}</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+                    <div class="row alert alert-success" style="text-align:center; padding-top:5px; padding-bottom:5px; margin-bottom: 0px;">       
+              <h5 style="font-size:20px; text-align:center"> Student dosáhl {{ result }} procent a tedy výsledná známka je  <span style="font-size: 150%;"> {{ znam }}</span> </h5>
+              </div>
+                    
+               <div class="row" style="padding:5px; text-align: center;">
+                    
+                    {{ form_widget(myform.zadej) }}
+                </div>  
   <script>
     function determineGrade() {
       var score = document.getElementById('score').value;
